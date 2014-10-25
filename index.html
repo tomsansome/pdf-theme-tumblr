@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="http://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=0fe6931f685c5a29060675a836044a62"></script>
+<html>
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+        <title>PDF Theme</title>
+        <link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar/cube_closed_128.png">
+        <link rel="alternate" type="application/rss+xml" href="http://pdf-theme.tumblr.com/rss">
+        
+            <meta name="description" content="Blog description to go in here. Oh isn&#039;t that a lovely description to go in here. And it auto updates, how impressive. Let&#039;s add more in here. I could so have used lorum ipsum. Wtf am I doing." />
+        
+        <meta name="color:Text Colour" content="#333"/>
+        <meta name="text:Twitter Username" content=""/>
+        <meta name="text:Instagram Username" content=""/>
+        <style>
+            a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+            
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: 'icomoon';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            .icon-home:before {
+                content: "\e600";
+            }
+            .icon-tag:before {
+                content: "\e605";
+            }
+            .icon-drawer:before {
+                content: "\e601";
+            }
+            .icon-point-up:before {
+                content: "\e602";
+            }
+            .icon-info:before {
+                content: "\e603";
+            }
+            .icon-plus:before {
+                content: "\e604";
+            }
+
+            body {
+                box-sizing: border-box;
+                font-family: Helvetica, sans-serif;
+                font-size: 14px;
+                line-height: 1.4em;
+                background: rgb(204,204,204);
+                color: #333;
+                letter-spacing: 0.04em;
+            }
+            
+            a { color: #333 }
+            
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+            
+            #tumblr_controls {
+                right: 80px !important; 
+            }
+
+            .blog-title {
+                font-size: 40px;
+                line-height: 1em;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+            .about {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0.95);
+                z-index: 99;
+            }
+            
+            .about.active {
+                display: block;
+            }
+            
+            .about .inner {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                width: 100%;
+                max-width: 300px;
+                padding: 20px;
+                text-align: center;
+                background: #eee;
+            }
+            
+            .about .inner .blog-title {
+                margin-bottom: 30px;
+                line-height: 1.7em;
+            }
+            
+            .about .inner .description {
+                margin-bottom: 10px;
+                padding-bottom: 30px;
+            }
+            
+            .about .inner .theme p {
+                font-family: serif;
+                color: #999;
+                font-size: 13px;
+            }
+            
+            .about .inner .theme a {
+                color: #999;
+            }
+            
+            .about .about-close {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                font-size: 60px;
+                padding: 40px;
+                cursor: pointer;
+            }
+            
+            .about .about-close:hover {
+                color: #ccc;
+            }
+            
+            .loading {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(204,204,204);
+                z-index: 100;
+            }
+            
+            .loading .inner {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                width: 130px;
+                height: 60px;
+                background: rgb(29,39,59);
+                box-shadow: -1px 1px 2px rgb(120,120,120);
+                border-radius: 3px;
+            }
+            
+            .loading .inner .text {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 5px;
+                float: left;
+                width: 60px;
+                color: white;
+                font-weight: bold;
+                font-family: Helvetica, sans-serif;
+            }
+            
+            .loading .progress {
+                float: left;
+                position: relative;
+                top: 50%;
+                width: 50px;
+                height: 50px;
+                margin: -25px 0 0 5px;
+                border-radius: 50%;
+                background-color: white;
+                border: 3px solid #202837;
+            }
+            
+            .loading .progress .overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: #202837;
+            }
+            
+            [data-progress="1"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(90deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="6"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(108deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="10"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(126deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="16"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(144deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="21"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(162deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="26"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(180deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="31"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(198deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="36"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(216deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="41"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(234deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="46"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(252deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="51"] {
+              background-image: linear-gradient(-90deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="56"] {
+              background-image: linear-gradient(-72deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="61"] {
+              background-image: linear-gradient(-54deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="66"] {
+              background-image: linear-gradient(-36deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="71"] {
+              background-image: linear-gradient(-18deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="76"] {
+              background-image: linear-gradient(0deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="81"] {
+              background-image: linear-gradient(18deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="86"] {
+              background-image: linear-gradient(36deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="91"] {
+              background-image: linear-gradient(54deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="96"] {
+              background-image: linear-gradient(72deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+            
+            [data-progress="110"] {
+              background-image: linear-gradient(90deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
+            }
+
+            .page-pointer {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 100%;
+                z-index: 99;
+            }
+
+            .page-pointer .pointer {
+                position: absolute;
+                top: 0;
+                left: -77px;
+                width: 70px;
+                height: 48px;
+                background: rgba(0,0,0,0.6);
+                border-radius: 4px;
+            }
+
+            .page-pointer .pointer:after {
+                left: 100%;
+                top: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-left-color: rgba(0,0,0,0.6);
+                border-width: 7px;
+                margin-top: -7px;
+            }
+
+            .page-pointer .pointer .current-page {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-shadow: 1px 1px 1px #333;
+                color: white;
+                font-size: 13px;
+            }
+
+            .navigation {
+                position: fixed;
+                bottom: 40px;
+                right: 40px;
+                display: inline-block;
+                
+                background: rgb(53,71,107);
+                background: -moz-linear-gradient(top,  rgba(53,71,107,0.85) 0%, #0f1828 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#35476b), color-stop(100%,#0f1828));
+                background: -webkit-linear-gradient(top,  rgba(53,71,107,0.85) 0%,#0f1828 100%);
+                background: -o-linear-gradient(top,  rgba(53,71,107,0.85) 0%,#0f1828 100%);
+                background: -ms-linear-gradient(top,  rgba(53,71,107,0.85) 0%,#0f1828 100%);
+                background: linear-gradient(to bottom,  rgba(53,71,107,0.85) 0%,#0f1828 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35476b', endColorstr='#0f1828',GradientType=0 );
+
+                box-shadow: 0px 0px 4px #999;
+                border-radius: 3px;
+                border: 1px solid #333c4b;
+                
+                z-index: 98;
+            }
+
+            .navigation .item {
+                display: inline-block;
+                margin-right: -4px;
+            }
+
+            .navigation .item a {
+                display: block;
+                color: white;
+                padding: 10px 16px;
+                border-right: 1px solid #121925;
+                border-left: 1px solid #333c4b;
+                min-width: 45px;
+                min-height: 36px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            .navigation .item a:hover {
+                background: rgba(69, 94, 145, 0.85);
+            }
+
+            .navigation .item:first-child a {
+                border-left: 0;
+            }
+            .navigation .item:last-child {
+                margin-right: 0;
+            }
+            .navigation .item:last-child a {
+                border-right: 0;
+            }
+
+            html, body,
+            .posts,
+            .post {
+                height: 100%;
+            }
+
+            .posts .post {
+                position: relative;
+                display: block;
+                background: white;
+                margin: 10px 20px;
+                padding: 20px;
+                box-shadow: 0 0 4px rgb(158,158,158);
+            }
+            
+            .post .actions {
+                position: absolute;
+            }
+            
+            .post .actions li {
+                display: inline-block;
+                margin: 0 15px 0 0;
+            }
+
+            .posts .post:first-child {
+                margin-top: 2px;
+            }
+
+            .posts .post:last-child {
+                margin-bottom: 2px;
+            }
+
+            .posts .post .inner {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            
+            .post .inner a {
+                color: #333;
+            }
+            
+            .post .inner .post-title,
+            .post .inner .post-title a {
+                color: #333;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 24px;
+                text-decoration: none;
+                margin-bottom: 20px;
+            }
+            
+            .post .inner .photo img {
+                
+            }
+            
+            .post .inner .quote blockquote {
+                font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+                font-size: 24px;
+                margin-bottom: 22px;
+                line-height: 1.5em;
+            }
+            
+            .post .inner .link .link-tag {
+                display: inline-block;
+                border: 3px solid #333;
+                padding: 30px 50px;
+                color: #333;
+                text-decoration: none;
+                font-size: 24px;
+                font-weight: bold;
+                transition: background 200ms ease, color 200ms ease;
+                margin: 20px 0;
+            }
+            
+            .post .inner .link .link-tag:hover {
+                color: white;
+                background: #333;
+            }
+            
+            .post .inner .chat ul.chat li {
+                width: 50%;
+                margin: 15px 0;
+            }
+            
+            .post .inner .chat ul.chat li .label {
+                font-weight: bold;
+            }
+            
+            .post .inner .chat ul.chat .odd {
+                text-align: left;
+                transform: translate(25%);
+            }
+            
+            .post .inner .chat ul.chat .even {
+                text-align: right;
+                transform: translate(75%);
+            }
+            
+            .post .inner .caption {
+                margin-top: 20px;
+            }
+            
+            .post .text p {
+                max-width: 500px;
+                margin: 20px auto;
+            }
+            
+            .post .tags {
+                position: absolute;
+                bottom: 20px;
+                left: 10px;
+            }
+            
+            .post .tags li {
+                display: inline-block;
+                margin: 0 15px;
+            }
+            
+            .post .tags li a {
+                color: #ccc;
+                text-decoration: none;
+            }
+            
+            @font-face {
+                font-family: 'icomoon';
+                src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('woff'),
+                     url('http://static.tumblr.com/xonr5wu/BlTndwmht/icomoon.ttf') format('truetype'),
+                     url('http://static.tumblr.com/xonr5wu/CDBndwmhe/icomoon.svg#icomoonregular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+        </style>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+!function(a){var b="waitForImages";a.waitForImages={hasImageProperties:["backgroundImage","listStyleImage","borderImage","borderCornerImage","cursor"]},a.expr[":"].uncached=function(b){if(!a(b).is('img[src!=""]'))return!1;var c=new Image;return c.src=b.src,!c.complete},a.fn.waitForImages=function(c,d,e){var f=0,g=0;if(a.isPlainObject(arguments[0])&&(e=arguments[0].waitForAll,d=arguments[0].each,c=arguments[0].finished),c=c||a.noop,d=d||a.noop,e=!!e,!a.isFunction(c)||!a.isFunction(d))throw new TypeError("An invalid callback was supplied.");return this.each(function(){var h=a(this),i=[],j=a.waitForImages.hasImageProperties||[],k=/url\(\s*(['"]?)(.*?)\1\s*\)/g;e?h.find("*").addBack().each(function(){var b=a(this);b.is("img:uncached")&&i.push({src:b.attr("src"),element:b[0]}),a.each(j,function(a,c){var d,e=b.css(c);if(!e)return!0;for(;d=k.exec(e);)i.push({src:d[2],element:b[0]})})}):h.find("img:uncached").each(function(){i.push({src:this.src,element:this})}),f=i.length,g=0,0===f&&c.call(h[0]),a.each(i,function(e,i){var j=new Image;a(j).on("load."+b+" error."+b,function(a){return g++,d.call(i.element,g,f,"load"==a.type),g==f?(c.call(h[0]),!1):void 0}),j.src=i.src})})}}(jQuery);
+  </script>
+        <script>
+        $(function() {
+
+            var SELECTOR = null;
+            var loadingWrapper = null;
+            var progressWheel = null;
+            var totalPosts = 0;
+            var pageHeight = 0;
+            var pagePointer = null;
+            var currentSection = 0;
+            var curYPos = 0;
+            var curXPos = 0;
+            var curDown = false;
+
+            function init() {
+                setupSelectors();
+                eventListeners();
+
+                calcTotalPosts();
+                loadSections();
+                setCurrentSection();
+
+                waitForImageLoad();
+                hideLoader();
+            }
+
+            function setupSelectors() {
+                SELECTOR = $('body');
+                loadingWrapper = SELECTOR.find('.loading');
+                progressWheel = loadingWrapper.find('.progress');
+                pagePointer = SELECTOR.find('.page-pointer');
+            }
+
+            function eventListeners() {
+                $(window).scroll(function(){ onScroll() });
+                SELECTOR.find('.about-trigger').on('click', function(e) { toggleAbout(e); });
+                SELECTOR.find('.about-close').on('click', function(e) { toggleAbout(e); });
+                SELECTOR.find('.up-top').on('click', function(e) { goToTop(e); });
+                
+                // SELECTOR.find('.page-pointer').on('mousedown', function(e) { onMouseDown(e); });
+                // SELECTOR.find('.page-pointer').on('mouseup', function(e){ onMouseUp(e); });
+                // SELECTOR.find('.page-pointer').on('mousemove', function(e){ onMouseMove(e); });
+            }
+            
+            function onScroll() {
+                pagePointerPosition();
+                checkCurrentSection();
+            }
+            
+            function onMouseDown(e) {
+                
+                 curDown = true;
+                 curYPos = e.pageY;
+                 curXPos = e.pageX;
+            }
+            
+            function onMouseUp(e) {
+                curDown = false;
+                console.log(curDown);
+            }
+            
+            function onMouseMove(e) {
+                if (curDown === true) {
+                    console.log(curDown);
+                    window.scrollTo(document.body.scrollLeft + (curXPos - e.pageX),
+                    document.body.scrollTop + (curYPos - e.pageY));
+                }
+            }
+
+            function calcTotalPosts() {
+                totalPosts = $('.post').length;
+                console.log('total posts: ' + totalPosts);
+            }
+
+            function loadSections() {
+                for (var i = 0; i < $('.post').length; i++) {
+                    setTimeout(function() {
+                        var totalPostsMath = 100 / totalPosts;
+                        var rounded = 5 * Math.round(totalPostsMath/5);
+                        var progress = i += rounded;
+                        console.log(progress);
+                        progressWheel.attr('data-progress', progress);
+                        if (progressWheel.attr('data-progress') === 100) {
+                            hideLoader();
+                        }
+                    }, i * 100)
+                }
+            }
+
+            function waitForImageLoad() {
+                $('.post').waitForImages({
+                    each: function(count) {
+                        setTimeout(function(){
+                            var progressTimes = count * 10 ;
+                            progressWheel.attr('data-progress', progressTimes);
+                        }, count * 100);
+                        
+                    },
+                    waitForAll: true
+                });
+            }
+
+            function hideLoader() {
+                setTimeout(function(){
+                    loadingWrapper.fadeOut();
+                }, 2000);
+            }
+
+            function pagePointerPosition() {
+                pagePointer.css({
+                    top: ($(window).scrollTop() / totalPosts) + "px"
+                });
+            }
+            
+            function setPointerSection() {
+                SELECTOR.find('.current-page').html(currentSection)
+            }
+            
+            function checkCurrentSection() {
+                var windowScrollTop = $(window).scrollTop(),
+                    sections = SELECTOR.find(".post"),
+                    i = 0,
+                    length = sections.length,
+                    activeSectionID = 0;
+                for (; i < length; i++) {
+                    var elTop = $(sections[i]).offset().top;
+                    if (windowScrollTop >= elTop) {
+                        activeSectionID = i;
+                    }
+                    if (windowScrollTop < sections[0]) {
+                        activeSectionID = -1;
+                    }
+                }
+                setCurrentSection(activeSectionID + 1);
+            }
+            
+            function setCurrentSection(i) {
+                currentSection = i;
+                setPointerSection();
+            }
+            
+            function toggleAbout(e) {
+                e.preventDefault();
+                SELECTOR.find('.about').toggleClass('active');
+            }
+            
+            function goToTop(e) {
+                e.preventDefault();
+                $('body').animate({ scrollTop: 0 }, 500);
+            }
+
+            init();
+           
+        });
+            
+        </script>
+    <link rel="alternate" href="android-app://com.tumblr/tumblr/x-callback-url/blog?blogName=pdf-theme" />
+<script src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=c78ef57bd25c48e7f24a984e7ef6ceba"></script>
+<link rel="stylesheet" type="text/css" href="http://assets.tumblr.com/fonts/gibson/stylesheet.css?v=3">
+<meta http-equiv="x-dns-prefetch-control" content="off"/>
+<meta name="keywords" content="for,tag,audio,soundcloud,youtube" />
+
+<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995" /><meta property="og:title" content="PDF Theme" /><meta property="og:url" content="http://pdf-theme.tumblr.com/?og=1" /><meta property="og:description" content="Blog description to go in here. Oh isn&#039;t that a lovely description to go in here. And it auto..." /><meta property="og:type" content="tumblr-feed:tumblelog" /><meta property="og:image" content="http://assets.tumblr.com/images/default_avatar/cube_closed_128.png" /><meta property="al:ios:url" content="tumblr://x-callback-url/blog?blogName=pdf-theme" /><meta property="al:ios:app_name" content="Tumblr" /><meta property="al:ios:app_store_id" content="305343404" /><meta property="al:android:url" content="tumblr://x-callback-url/blog?blogName=pdf-theme" /><meta property="al:android:app_name" content="Tumblr" /><meta property="al:android:package" content="com.tumblr" /><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
+
+
+<!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:site" content="tumblr" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="pdf-theme" /><meta name="twitter:description" content="Blog description to go in here. Oh isn&#039;t that a lovely description to go in here. And it auto updates, how impressive. Let&#039;s add more in here. I could so have used lorum ipsum. Wtf am I doing." /><meta name="twitter:creator" content="tomsansome" /><meta name="twitter:app:name:iphone" content="Tumblr" /><meta name="twitter:app:name:ipad" content="Tumblr" /><meta name="twitter:app:name:googleplay" content="Tumblr" /><meta name="twitter:app:id:iphone" content="305343404" /><meta name="twitter:app:id:ipad" content="305343404" /><meta name="twitter:app:id:googleplay" content="com.tumblr" /><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=pdf-theme&amp;referrer=twitter-cards" /><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=pdf-theme&amp;referrer=twitter-cards" /><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=pdf-theme&amp;referrer=twitter-cards" />
+
+</head>
+    <body>
+        <div class="loading">
+            <div class="inner">
+                <div class="loader progress" data-progress="5">
+                    <div class="overlay"></div>
+                </div>
+                <div class="text">Loading</div>
+            </div>
+        </div>
+        
+        <div class="page-pointer">
+            <div class="pointer">
+                <span class="current-page">1</span>
+            </div>
+        </div>
+        
+        <div class="about">
+            <div class="inner">
+                <h1 class="blog-title">PDF Theme</h1>
+            
+                <div class="description">
+                    Blog description to go in here. Oh isn't that a lovely description to go in here. And it auto updates, how impressive. Let's add more in here. I could so have used lorum ipsum. Wtf am I doing.
+                    <p><a href="http://twitter.com/tomsansome">tomsansome</a></p>
+                    <p><a href="http://instagram.com/sansometom">sansometom</a></p>
+                </div>
+            
+                <div class="theme">
+                    <p>Tumblr theme by <a href="http://tom.sanso.me" target="_blank">Tom Sansome</a></p>
+                </div>
+            </div>
+            <a class="about-close">&times;</a>
+        </div>
+        
+        <ul class="navigation">
+            <li class="item"><a href="#" class="about-trigger icon-info"></a></li>
+            <li class="item"><a href="/archive" class="icon-drawer"></a></li>
+            <li class="item"><a href="http://tumblr.com/dashboard" class="icon-home"></a></li>
+            <li class="item"><a href="http://tumblr.com/follow/" class="icon-plus"></a></li>
+            <li class="item"><a href="#" class="up-top icon-point-up"></a></li>
+        </ul>
+
+        <section class="posts">
+             
+            <div class="post">
+                <ul class="actions">
+                    <li class="like-button">
+                        <div class="like_button" data-post-id="100819729775" id="like_button_100819729775"><iframe id="like_iframe_100819729775" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=eec83bdba6047aaffe0aea2a68f975cb#name=pdf-theme&amp;post_id=100819729775&amp;rk=F1Q8ojzI" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowTransparency="true"></iframe></div>
+                    </li>
+                    <li class="reblog-button">
+                        <a href="https://www.tumblr.com/reblog/100819729775/F1Q8ojzI" class="reblog_button"style="display: block;width:20px;height:20px;"><svg width="100%" height="100%" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ccc"><path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path><path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path></svg></a>
+                    </li>
+                </ul>
+            
+                <div class="inner">
+                
+                
+                
+                
+                
+                
+                
+                    <div class="chat">
+                        
+                            <h3 class="post-title"><a href="http://pdf-theme.tumblr.com/post/100819729775/a-chat-i-once-had">A chat I once had</a></h3>
+                        
+
+                        <ul class="chat">
+                            
+                                <li class="odd user_1">
+                                    
+                                        <span class="label">Man:</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </li>
+                            
+                                <li class="even user_2">
+                                    
+                                        <span class="label">Woman:</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </li>
+                            
+                                <li class="odd user_1">
+                                    
+                                        <span class="label">Man:</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </li>
+                            
+                                <li class="even user_2">
+                                    
+                                        <span class="label">Woman:</span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                
+                
+                </div><!-- .inner -->
+                
+                    <ul class="tags">
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/chat"><span class="icon-tag"></span> chat</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div><!-- .post -->
+             
+            <div class="post">
+                <ul class="actions">
+                    <li class="like-button">
+                        <div class="like_button" data-post-id="100819441715" id="like_button_100819441715"><iframe id="like_iframe_100819441715" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=eec83bdba6047aaffe0aea2a68f975cb#name=pdf-theme&amp;post_id=100819441715&amp;rk=iU95lbZR" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowTransparency="true"></iframe></div>
+                    </li>
+                    <li class="reblog-button">
+                        <a href="https://www.tumblr.com/reblog/100819441715/iU95lbZR" class="reblog_button"style="display: block;width:20px;height:20px;"><svg width="100%" height="100%" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ccc"><path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path><path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path></svg></a>
+                    </li>
+                </ul>
+            
+                <div class="inner">
+                
+                
+                
+                
+                
+                    <div class="quote">
+                        <blockquote cite="Lorum Ipsum - 2014">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"</blockquote>
+
+                        
+                            <div class="source">Lorum Ipsum - 2014</div>
+                        
+                    </div>
+                
+                
+                
+                
+                
+                </div><!-- .inner -->
+                
+                    <ul class="tags">
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/quote"><span class="icon-tag"></span> quote</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div><!-- .post -->
+             
+            <div class="post">
+                <ul class="actions">
+                    <li class="like-button">
+                        <div class="like_button" data-post-id="100819156630" id="like_button_100819156630"><iframe id="like_iframe_100819156630" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=eec83bdba6047aaffe0aea2a68f975cb#name=pdf-theme&amp;post_id=100819156630&amp;rk=JZNA4BLn" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowTransparency="true"></iframe></div>
+                    </li>
+                    <li class="reblog-button">
+                        <a href="https://www.tumblr.com/reblog/100819156630/JZNA4BLn" class="reblog_button"style="display: block;width:20px;height:20px;"><svg width="100%" height="100%" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ccc"><path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path><path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path></svg></a>
+                    </li>
+                </ul>
+            
+                <div class="inner">
+                
+                
+                    <div class="photo">
+                        <img src="http://38.media.tumblr.com/992563a09bda09852dd1744a61a19b5a/tumblr_ndy0cwQtYL1u1b8puo1_500.jpg" alt="A rapper. &amp;#8220;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&amp;#8221;"/>
+
+                        
+                            <div class="caption"><p>A rapper. &#8220;Lorem ipsum dolor sit amet, <em>consectetur adipiscing elit</em>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation</strong> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <a href="http://google.com">culpa qui officia</a> deserunt mollit anim id est laborum.&#8221;</p></div>
+                        
+                    </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                </div><!-- .inner -->
+                
+                    <ul class="tags">
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/tag"><span class="icon-tag"></span> tag</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/for"><span class="icon-tag"></span> for</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/rapper"><span class="icon-tag"></span> rapper</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div><!-- .post -->
+             
+            <div class="post">
+                <ul class="actions">
+                    <li class="like-button">
+                        <div class="like_button" data-post-id="100343331280" id="like_button_100343331280"><iframe id="like_iframe_100343331280" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=eec83bdba6047aaffe0aea2a68f975cb#name=pdf-theme&amp;post_id=100343331280&amp;rk=LXGS6I6t" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowTransparency="true"></iframe></div>
+                    </li>
+                    <li class="reblog-button">
+                        <a href="https://www.tumblr.com/reblog/100343331280/LXGS6I6t" class="reblog_button"style="display: block;width:20px;height:20px;"><svg width="100%" height="100%" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ccc"><path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path><path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path></svg></a>
+                    </li>
+                </ul>
+            
+                <div class="inner">
+                
+                
+                
+                
+                
+                
+                
+                
+                    <div class="video">
+                        <iframe width="500" height="281" src="https://www.youtube.com/embed/OraL6lKoyXE?feature=oembed" frameborder="0" allowfullscreen></iframe>
+                            <div class="caption"><p>Youtube link</p></div>
+                        
+                    </div>
+                
+                
+                </div><!-- .inner -->
+                
+                    <ul class="tags">
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/tag"><span class="icon-tag"></span> tag</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/for"><span class="icon-tag"></span> for</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/video"><span class="icon-tag"></span> video</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/youtube"><span class="icon-tag"></span> youtube</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div><!-- .post -->
+             
+            <div class="post">
+                <ul class="actions">
+                    <li class="like-button">
+                        <div class="like_button" data-post-id="100343272925" id="like_button_100343272925"><iframe id="like_iframe_100343272925" src="http://assets.tumblr.com/assets/html/like_iframe.html?_v=eec83bdba6047aaffe0aea2a68f975cb#name=pdf-theme&amp;post_id=100343272925&amp;rk=yjxxzdkf" scrolling="no" width="20" height="20" frameborder="0" class="like_toggle" allowTransparency="true"></iframe></div>
+                    </li>
+                    <li class="reblog-button">
+                        <a href="https://www.tumblr.com/reblog/100343272925/yjxxzdkf" class="reblog_button"style="display: block;width:20px;height:20px;"><svg width="100%" height="100%" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ccc"><path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path><path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path></svg></a>
+                    </li>
+                </ul>
+            
+                <div class="inner">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <div class="audio">
+                        <iframe src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F171041342&amp;visual=true&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;origin=tumblr" frameborder="0" allowtransparency="true" class="soundcloud_audio_player" width="500" height="500"></iframe>
+                            <div class="caption"><p>Music from Soundcloud link</p></div>
+                        
+                    </div>
+                
+                </div><!-- .inner -->
+                
+                    <ul class="tags">
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/tag"><span class="icon-tag"></span> tag</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/for"><span class="icon-tag"></span> for</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/audio"><span class="icon-tag"></span> audio</a>
+                            </li>
+                        
+                            <li>
+                                <a href="http://pdf-theme.tumblr.com/tagged/soundcloud"><span class="icon-tag"></span> soundcloud</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div><!-- .post -->
+            
+        </section>
+
+        <p id="footer">
+            
+                <a href="/page/2">Next &#187;</a>
+            
+        </p>
+
+</body>
+</html>

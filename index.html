@@ -673,10 +673,6 @@
                 SELECTOR.find('.up-top').on('click', function(e) { goToTop(e); });
                 SELECTOR.find('.enlarge').on('click', function(e) { onEnlargeClick(e); });
                 SELECTOR.find('.large-image .close').on('click', function() { toggleLargeImage(); });
-                
-                // SELECTOR.find('.page-pointer').on('mousedown', function(e) { onMouseDown(e); });
-                // SELECTOR.find('.page-pointer').on('mouseup', function(e){ onMouseUp(e); });
-                // SELECTOR.find('.page-pointer').on('mousemove', function(e){ onMouseMove(e); });
             }
             
             function onScroll() {
@@ -1029,9 +1025,7 @@
         </section>
 
         <div class="pagination">
-            {block:PreviousPage}
-                <!--<a href="{PreviousPage}">&#171; Previous</a>-->
-            {/block:PreviousPage}{block:NextPage}
+            {block:NextPage}
                 <a href="{NextPage}" class="next">Next &#187;</a>
             {/block:NextPage}
         </div>

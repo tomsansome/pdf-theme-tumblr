@@ -150,7 +150,6 @@
             }
             
             .loading {
-                display: none;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -206,11 +205,11 @@
                 background: #202837;
             }
             
-            [data-progress="1"] {
-              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(90deg, white 50%, #202837 50%, #202837);
+            [data-progress="0"] {
+              background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(0deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="6"] {
+            [data-progress="5"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(108deg, white 50%, #202837 50%, #202837);
             }
             
@@ -218,75 +217,75 @@
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(126deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="16"] {
+            [data-progress="15"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(144deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="21"] {
+            [data-progress="20"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(162deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="26"] {
+            [data-progress="25"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(180deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="31"] {
+            [data-progress="30"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(198deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="36"] {
+            [data-progress="35"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(216deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="41"] {
+            [data-progress="40"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(234deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="46"] {
+            [data-progress="45"] {
               background-image: linear-gradient(90deg, #202837 50%, transparent 50%, transparent), linear-gradient(252deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="51"] {
+            [data-progress="50"] {
               background-image: linear-gradient(-90deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="56"] {
+            [data-progress="55"] {
               background-image: linear-gradient(-72deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="61"] {
+            [data-progress="60"] {
               background-image: linear-gradient(-54deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="66"] {
+            [data-progress="65"] {
               background-image: linear-gradient(-36deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="71"] {
+            [data-progress="70"] {
               background-image: linear-gradient(-18deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="76"] {
+            [data-progress="75"] {
               background-image: linear-gradient(0deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="81"] {
+            [data-progress="80"] {
               background-image: linear-gradient(18deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="86"] {
+            [data-progress="85"] {
               background-image: linear-gradient(36deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="91"] {
+            [data-progress="90"] {
               background-image: linear-gradient(54deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="96"] {
+            [data-progress="95"] {
               background-image: linear-gradient(72deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
             
-            [data-progress="110"] {
+            [data-progress="100"] {
               background-image: linear-gradient(90deg, white 50%, transparent 50%, transparent), linear-gradient(270deg, white 50%, #202837 50%, #202837);
             }
 
@@ -544,6 +543,19 @@
                 transform: translate(75%);
             }
             
+            .post .inner .video {
+                text-align: center;
+            }
+            
+            .post .inner .tumblr_video_container {
+                margin: 0 auto;
+                max-height: 500px;
+            }
+            
+            .post .inner .tumblr_video_container iframe {
+                max-height: 500px;
+            }
+            
             .post .inner .caption {
                 margin-top: 20px;
             }
@@ -569,12 +581,20 @@
                 text-decoration: none;
             }
             
-            footer .notes {
+            footer {
                 width: 500px;
                 margin: 20px auto 50px auto;
                 padding: 20px;
                 background: white;
                 box-shadow: 0 0 4px rgb(158,158,158);
+            }
+            
+            .footer-note-count {
+                text-align: center;
+            }
+            
+            footer .notes {
+                margin-top: 5px;
             }
             
             footer .notes .note {
@@ -764,9 +784,9 @@
                 SELECTOR.find('.about-trigger').on('click', function(e) { toggleAbout(e); });
                 SELECTOR.find('.about-close').on('click', function(e) { toggleAbout(e); });
                 SELECTOR.find('.up-top').on('click', function(e) { goToTop(e); });
-                SELECTOR.find('.enlarge').on('click', function(e) { onEnlargeClicked(e); });
-                SELECTOR.find('.large-image .close').on('click', function() { closeImageOverlay(); });
-                SELECTOR.find('.photoset img').on('click', function(e) { onPhotosetClicked(e); });
+                $(document).on('click', '.enlarge', function(e) { onEnlargeClicked(e); });
+                $(document).on('click', '.large-image .close', function() { closeImageOverlay(); });
+                $(document).on('click', '.photoset img', function(e) { onPhotosetClicked(e); });
                 $(window).on('resize', function() { onResize() });
             }
             
@@ -809,6 +829,7 @@
                         var totalPostsMath = 100 / totalPosts;
                         var rounded = 5 * Math.round(totalPostsMath/5);
                         var progress = i += rounded;
+                        var progress = progress - totalPosts;
                         console.log(progress);
                         progressWheel.attr('data-progress', progress);
                         if (progressWheel.attr('data-progress') === 100) {
@@ -833,8 +854,8 @@
 
             function hideLoader() {
                 setTimeout(function(){
-                    // loadingWrapper.fadeOut();
-                }, 2000);
+                    loadingWrapper.fadeOut(200);
+                }, 1000);
             }
 
             function pagePointerPosition() {
@@ -913,7 +934,7 @@
             }
             
             function beforeLoading() {
-                // pagePointer.find('.current-page').html('Loading');
+                // console.log('before loading');
             }
             
             function loadComplete(data) {
@@ -922,7 +943,6 @@
 
                 $('.posts').append(content);
                 reCalcPosts();
-                eventListeners();
                 
                 loadingNext = false;
                 
@@ -951,7 +971,9 @@
             function onPhotosetClicked(e) {
                 var images = [];
                 elClicked = $(e.currentTarget);
-                elClicked.parent('.photoset').find('img').each(function() {
+                var closestDiv = elClicked.closest('.photoset');
+                console.log(closestDiv);
+                elClicked.closest('.post .photoset').find('img').each(function() {
                    var imageUrl = $(this).data('large');
                    var asSlide = '<li class="slide"><img src="'+imageUrl+'"></li>'
                    images.push(asSlide);
@@ -1171,8 +1193,9 @@
                 {block:Panorama}
                     <div class="panorama">
                         {LinkOpenTag}
-                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                        {LinkCloseTag}{block:Caption}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="700"/>
+                        {LinkCloseTag}
+                        {block:Caption}
                             <div class="caption">{Caption}</div>
                         {/block:Caption}
                     </div>
@@ -1252,13 +1275,14 @@
                     </ul>
                 {/block:HasTags}
             </div><!-- .post -->
-            <footer>
             {block:PermalinkPage}
-                {block:Posts}
-                    {PostNotes-16}
-                {/block:Posts}
+                <footer>
+                    <p class="footer-note-count">{NoteCountWithLabel}</p>
+                    {block:Posts}
+                        {PostNotes-16}
+                    {/block:Posts}
+                </footer>
             {/block:PermalinkPage}
-            </footer>
             {/block:Posts}
         </section>
 

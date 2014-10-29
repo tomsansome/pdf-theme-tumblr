@@ -15,7 +15,6 @@
             a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
             
             [class^="icon-"], [class*=" icon-"] {
-                font-family: 'icomoon';
                 speak: none;
                 font-style: normal;
                 font-weight: normal;
@@ -24,42 +23,41 @@
                 line-height: 1;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
+                display: inline-block;
+                min-height: 19px;
+                min-width: 19px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 19px 19px;
             }
             
-            .icon-home:before {
-                content: "\e600";
+            .icon-home {
+                background-image: url('http://static.tumblr.com/xonr5wu/8b0ne87ri/home.svg');
             }
-            .icon-tag:before {
-                content: "\e602";
+            .icon-tag {
+                background-image: url('http://static.tumblr.com/xonr5wu/J32ne87uh/tag.svg');
             }
-            .icon-drawer:before {
-                content: "\e606";
+            .icon-drawer {
+                background-image: url('http://static.tumblr.com/xonr5wu/3QKne87oq/drawer.svg');
             }
-            .icon-link:before {
-                content: "\e607";
+            .icon-point-up {
+                background-image: url('http://static.tumblr.com/xonr5wu/xazne87th/point-up.svg');
             }
-            .icon-point-up:before {
-                content: "\e601";
+            .icon-info {
+                background-image: url('http://static.tumblr.com/xonr5wu/GKMne87s1/info.svg');
             }
-            .icon-info:before {
-                content: "\e605";
+            .icon-arrow-right {
+                background-image: url('http://static.tumblr.com/xonr5wu/Urane87o3/arrow-right.svg');
             }
-            .icon-arrow-right:before {
-                content: "\e609";
+            .icon-arrow-left {
+                background-image: url('http://static.tumblr.com/xonr5wu/MTone886x/arrow-left.svg');
             }
-            .icon-arrow-left:before {
-                content: "\e60a";
+            .icon-instagram {
+                background-image: url('http://static.tumblr.com/xonr5wu/MtTne87sr/instagram.svg');
             }
-            .icon-newtab:before {
-                content: "\e608";
+            .icon-twitter {
+                background-image: url('http://static.tumblr.com/xonr5wu/CYYne87va/twitter.svg');
             }
-            .icon-instagram:before {
-                content: "\e603";
-            }
-            .icon-twitter:before {
-                content: "\e604";
-            }
-
 
             body {
                 box-sizing: border-box;
@@ -515,13 +513,21 @@
             }
             
             .post .inner .link .link-tag span {
-                font-size: 20px;
                 margin-left: 10px;
+            }
+            
+            .post .inner .link .link-tag svg {
+                width: 20px;
+                height: 20px;
             }
             
             .post .inner .link .link-tag:hover {
                 color: white;
                 background: #333;
+            }
+            
+            .post .inner .link .link-tag:hover svg path {
+                fill: #fff;
             }
             
             .post .inner .chat ul.chat li {
@@ -579,6 +585,13 @@
             .post .tags li a {
                 color: #ccc;
                 text-decoration: none;
+            }
+            
+            .post .tags li a .icon-tag {
+                background-size: 15px 15px;
+                position: relative;
+                top: 4px;
+                margin-right: 5px;
             }
             
             footer {
@@ -673,16 +686,20 @@
                 z-index: 10;
                 cursor: pointer;
                 font-size: 26px;
-                background: rgba(255,255,255,0.7);
-                padding: 15px;
+                background-color: rgba(255,255,255,0.7);
+                padding: 16px;
                 border-radius: 50%;
-                transition: all 200ms ease;
+                transition: background 200ms ease;
+            }
+            
+            .large-image.photoset .next .icon-arrow-right, 
+            .large-image.photoset .prev .icon-arrow-left {
+                background-size: 22px;
             }
             
             .large-image.photoset .next:hover, 
             .large-image.photoset .prev:hover {
-                color: #444;
-                background: rgba(255,255,255,0.8);
+                background: rgba(255,255,255,0.9);
             }
 
             .large-image.photoset .next {
@@ -712,15 +729,6 @@
             
             .large-image .close:hover {
                 color: #999;
-            }
-            
-            @font-face {
-                font-family: 'icomoon';
-                src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('woff'),
-                     url('http://static.tumblr.com/xonr5wu/DA0ne4idv/icomoon.ttf') format('truetype'),
-                     url('http://static.tumblr.com/xonr5wu/c4ene4idc/icomoon.svg#icomoonregular') format('svg');
-                font-weight: normal;
-                font-style: normal;
             }
         </style>
         
@@ -984,7 +992,7 @@
             function setupSlideshow(images) {
                 var largeImageDiv = SELECTOR.find('.large-image');
                 largeImageDiv.append('<div class="slideshow" data-slideshow />');
-                largeImageDiv.append('<nav><a class="icon-arrow-right next"></a><a class="icon-arrow-left prev"></a></nav>')
+                largeImageDiv.append('<nav><a class="next"><span class="icon-arrow-right"></span></a><a class="prev"><span class="icon-arrow-left"></span></a></nav>')
                 largeImageDiv.find('.slideshow').append('<div class="slides" />');
                 largeImageDiv.find('.slides').append(images);
                 $('.slideshow').waitForImages({
@@ -1226,7 +1234,7 @@
                 {/block:Quote}
                 {block:Link}
                     <div class="link">
-                        <a href="{URL}" target="_blank" class="link-tag" {Target}>{Name} <span class="icon-newtab"></span></a>
+                        <a href="{URL}" target="_blank" class="link-tag" {Target}>{Name} <span class="icon-newtab"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M6 2v24h24v-24h-24zm22 22h-20v-20h20v20zm-24 4v-20l-2-2v24h24l-2-2zm9.414-6.586l6-6 4.586 4.586v-12h-12l4.586 4.586-6 6z" fill="#333"/></svg></span></a>
 
                         {block:Description}
                             <div class="description">{Description}</div>

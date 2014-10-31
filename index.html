@@ -10,9 +10,9 @@
         {/block:Description}
         <meta name="color:Text Colour" content="#333"/>
         <meta name="if:Twitter Icon" content="1"/>
-        <meta name="text:Twitter Username" content=""/>
+        <meta name="text:Twitter Username" content="tomsansome"/>
         <meta name="if:Instagram Icon" content="1"/>
-        <meta name="text:Instagram Username" content=""/>
+        <meta name="text:Instagram Username" content="sansometom"/>
         <style>
             a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
             
@@ -67,14 +67,10 @@
                 line-height: 1.4em;
                 background: rgb(204,204,204);
                 color: #333333;
-                color: {color:Text Colour};
                 letter-spacing: 0.04em;
             }
             
-            a { 
-                color: #333333;
-                color: {color:Text Colour};
-            }
+            a { color: #333333 }
             
             *,
             *:before,
@@ -131,7 +127,6 @@
             .about .inner .theme p {
                 font-family: serif;
                 color: #999;
-                color: {color:Text Colour};
                 font-size: 13px;
             }
             
@@ -451,13 +446,11 @@
             
             .post .inner a {
                 color: #333333;
-                color: {color:Text Colour};
             }
             
             .post .inner .post-title,
             .post .inner .post-title a {
                 color: #333333;
-                color: {color:Text Colour};
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 24px;
@@ -507,6 +500,10 @@
                 -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
                 cursor: pointer;
+                width: auto;
+                height: auto;
+                max-width: 500px;
+                max-height: 500px;
             }
             
             .post .inner .quote blockquote {
@@ -517,6 +514,8 @@
             }
             
             .post .inner .link .link-tag {
+                max-width: 500px;
+                position: relative;
                 display: inline-block;
                 border: 3px solid #333333;
                 padding: 30px 50px;
@@ -526,9 +525,14 @@
                 font-weight: bold;
                 transition: background 200ms ease, color 200ms ease;
                 margin: 20px 0;
+                word-wrap: break-word;
+                line-height: 1.3em;
             }
             
             .post .inner .link .link-tag span {
+                position: absolute;
+                top: -25px;
+                right: -25px;
                 margin-left: 10px;
             }
             
@@ -543,7 +547,7 @@
             }
             
             .post .inner .link .link-tag:hover svg path {
-                fill: #fff;
+                /*fill: #ccc;*/
             }
             
             .post .inner .chat ul.chat li {
@@ -760,7 +764,7 @@
                 
                 body {
                     margin-top: 50px;
-                    margin-bottom: 300px;
+                    margin-bottom: 50px;
                 }
                 
                 #tumblr_controls {
@@ -848,6 +852,8 @@
                     position: static;
                     width: 100%;
                     height: auto;
+                    max-width: 90%;
+                    max-height: none;
                     top: auto;
                     left: auto;
                     -ms-transform: translate(0);
@@ -855,6 +861,11 @@
                     transform: translate(0);
                     cursor: auto;
                     margin: 0 !important;
+                }
+                
+                .post .inner .link .link-tag {
+                    max-width: 300px;
+                    padding: 15px;
                 }
                 
                 .post .tags {
@@ -1218,9 +1229,11 @@
             
             function offsetImages() {
                 SELECTOR.find('.photoset img').each(function(i){
+                    var randX = Math.floor(Math.random() * 9) + 1,
+                        randY = Math.floor(Math.random() * 9) + 1;
                     $(this).css({
-                        marginTop: i * 10 + 'px',
-                        marginLeft: i * 10 + 'px'
+                        marginTop: randY * 10 + 'px',
+                        marginLeft: randX * 10 + 'px'
                     })
                 })
             }
@@ -1336,7 +1349,7 @@
                 {/block:Photoset}
                 {block:Quote}
                     <div class="quote">
-                        <blockquote>"{Quote}"</blockquote>
+                        <blockquote cite="{Source}">"{Quote}"</blockquote>
 
                         {block:Source}
                             <div class="source">{Source}</div>

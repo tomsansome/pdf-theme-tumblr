@@ -10,9 +10,9 @@
         {/block:Description}
         <meta name="color:Text Colour" content="#333"/>
         <meta name="if:Twitter Icon" content="1"/>
-        <meta name="text:Twitter Username" content="tomsansome"/>
+        <meta name="text:Twitter Username" content=""/>
         <meta name="if:Instagram Icon" content="1"/>
-        <meta name="text:Instagram Username" content="sansometom"/>
+        <meta name="text:Instagram Username" content=""/>
         <style>
             a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
             
@@ -67,10 +67,14 @@
                 line-height: 1.4em;
                 background: rgb(204,204,204);
                 color: #333333;
+                color: {color:Text Colour};
                 letter-spacing: 0.04em;
             }
             
-            a { color: #333333 }
+            a { 
+                color: #333333;
+                color: {color:Text Colour};
+            }
             
             *,
             *:before,
@@ -127,6 +131,7 @@
             .about .inner .theme p {
                 font-family: serif;
                 color: #999;
+                color: {color:Text Colour};
                 font-size: 13px;
             }
             
@@ -446,11 +451,13 @@
             
             .post .inner a {
                 color: #333333;
+                color: {color:Text Colour};
             }
             
             .post .inner .post-title,
             .post .inner .post-title a {
                 color: #333333;
+                color: {color:Text Colour};
                 text-transform: uppercase;
                 font-weight: bold;
                 font-size: 24px;
@@ -753,7 +760,7 @@
                 
                 body {
                     margin-top: 50px;
-                    margin-bottom: 50px;
+                    margin-bottom: 300px;
                 }
                 
                 #tumblr_controls {
@@ -1329,7 +1336,7 @@
                 {/block:Photoset}
                 {block:Quote}
                     <div class="quote">
-                        <blockquote cite="{Source}">"{Quote}"</blockquote>
+                        <blockquote>"{Quote}"</blockquote>
 
                         {block:Source}
                             <div class="source">{Source}</div>

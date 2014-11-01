@@ -1275,8 +1275,8 @@
                     var randX = Math.floor(Math.random() * 9) + 1,
                         randY = Math.floor(Math.random() * 9) + 1;
                     $(this).css({
-                        marginTop: randY * 10 + 'px',
-                        marginLeft: randX * 10 + 'px'
+                        marginTop: randY * 5 + 'px',
+                        marginLeft: randX * 5 + 'px'
                     })
                 })
             }
@@ -1392,7 +1392,7 @@
                 {/block:Photoset}
                 {block:Quote}
                     <div class="quote">
-                        <blockquote cite="{Source}">"{Quote}"</blockquote>
+                        <blockquote>"{Quote}"</blockquote>
 
                         {block:Source}
                             <div class="source">{Source}</div>

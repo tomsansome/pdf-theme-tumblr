@@ -965,6 +965,7 @@
                 $(document).on('click', '.large-image .close', function() { closeImageOverlay(); });
                 $(document).on('click', '.photoset img', function(e) { onPhotosetClicked(e); });
                 $(window).on('resize', function() { onResize() });
+                $(document).on('keyup', function(e) { onKeyup(e) });
             }
             
             function onResize() {
@@ -975,6 +976,16 @@
                 pagePointerPosition();
                 checkCurrentSection();
                 checkScrollPosition();
+            }
+            
+            function onKeyup(e) {
+                if (e.keyCode === 39) {
+                    var direction = 'next';
+                    changeSection(direction);
+                } else if (e.keyCode === 37) {
+                    var direction = 'prev';
+                    changeSection(direction);
+                }
             }
             
             function onMouseDown(e) {

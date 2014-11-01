@@ -70,6 +70,10 @@
                 letter-spacing: 0.04em;
             }
             
+            body.wait {
+                cursor: wait;
+            }
+            
             a { color: #333333 }
             
             *,
@@ -158,7 +162,7 @@
                 z-index: 100;
             }
             
-            .loading .inner {
+            .loading .loading-inner {
                 position: fixed;
                 bottom: 20px;
                 left: 20px;
@@ -169,7 +173,7 @@
                 border-radius: 3px;
             }
             
-            .loading .inner .text {
+            .loading .loading-inner .text {
                 position: relative;
                 top: 50%;
                 -ms-transform: translateY(-50%);
@@ -492,6 +496,10 @@
                 transform: scale3d(1, 1, 1);
             }
             
+            .post .inner .photoset {
+                position: relative;
+            }
+            
             .post .inner .photoset img {
                 position: absolute;
                 top: 50%;
@@ -504,6 +512,19 @@
                 height: auto;
                 max-width: 500px;
                 max-height: 500px;
+            }
+            
+            .post .inner .photoset .loading {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0.6);
+            }
+            
+            .post .inner .photoset .loading-inner {
+                box-shadow: none;
             }
             
             .post .inner .quote blockquote {
@@ -544,10 +565,6 @@
             .post .inner .link .link-tag:hover {
                 color: white;
                 background: #333;
-            }
-            
-            .post .inner .link .link-tag:hover svg path {
-                /*fill: #ccc;*/
             }
             
             .post .inner .chat ul.chat li {
@@ -894,6 +911,7 @@
             var SELECTOR = null;
             var loadingWrapper = null;
             var progressWheel = null;
+            var photosetProgress = null;
             var totalPosts = 0;
             var pageHeight = 0;
             var pagePointer = null;
@@ -928,6 +946,7 @@
                 SELECTOR = $('body');
                 loadingWrapper = SELECTOR.find('.loading');
                 progressWheel = loadingWrapper.find('.progress');
+                photosetProgress = SELECTOR.find('.photoset .progress')
                 pagePointer = SELECTOR.find('.page-pointer');
             }
             function eventListeners() {
@@ -1123,6 +1142,7 @@
                    var asSlide = '<li class="slide"><img src="'+imageUrl+'"></li>'
                    images.push(asSlide);
                 });
+                SELECTOR.addClass('wait');
                 setupSlideshow(images);
             }
             
@@ -1137,9 +1157,10 @@
                         runSlideshow();
                         openOverlay();
                         openPhotoset();
+                        SELECTOR.removeClass('wait');
                     },
                     each: function(count) {
-                        console.log(count);
+                        
                     },
                     waitForAll: true
                 });
@@ -1245,7 +1266,7 @@
     </head>
     <body>
         <div class="loading">
-            <div class="inner">
+            <div class="loading-inner">
                 <div class="loader progress" data-progress="10">
                     <div class="overlay"></div>
                 </div>

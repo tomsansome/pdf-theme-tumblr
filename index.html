@@ -80,6 +80,10 @@
                 cursor: wait;
             }
             
+            body.permalink-page .page-pointer {
+                display: none;
+            }
+            
             a { color: #333333 }
             
             *,
@@ -1282,7 +1286,7 @@
             
         </script>
     </head>
-    <body>
+    <body {block:PermalinkPage}class="permalink-page"{/block:PermalinkPage}>
         <div class="loading">
             <div class="loading-inner">
                 <div class="loader progress" data-progress="10">

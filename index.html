@@ -9,10 +9,48 @@
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
         <meta name="color:Text Colour" content="#333"/>
+        <meta name="if:Google Font" content="0"/>
         <meta name="if:Twitter Icon" content="1"/>
         <meta name="text:Twitter Username" content=""/>
         <meta name="if:Instagram Icon" content="1"/>
         <meta name="text:Instagram Username" content=""/>
+        <!-- Google fonts -->
+        <meta name="select:Google Font" content='Anton' title="Anton">
+        <meta name="select:Google Font" content='Arvo' title="Arvo">
+        <meta name="select:Google Font" content='Asap' title="Asap">         
+        <meta name="select:Google Font" content='Bevan' title="Bevan">
+        <meta name="select:Google Font" content='Cabin' title="Cabin">
+        <meta name="select:Google Font" content='Copse' title="Copse">
+        <meta name="select:Google Font" content='Corben' title="Corben">
+        <meta name="select:Google Font" content='Dancing Script' title="Dancing Script">
+        <meta name="select:Google Font" content='Droid Sans' title="Droid Sans">
+        <meta name="select:Google Font" content='Droid Serif' title="Droid Serif">
+        <meta name="select:Google Font" content='Josefin Slab' title="Josefin Slab">
+        <meta name="select:Google Font" content='Josefin Sans' title="Josefin Sans">
+        <meta name="select:Google Font" content='Just Another Hand' title="Just Another Hand">
+        <meta name="select:Google Font" content='Kaushan Script' title="Kaushan Script">        
+        <meta name="select:Google Font" content='Kreon' title="Kreon">
+        <meta name="select:Google Font" content='Lato' title="Lato">       
+        <meta name="select:Google Font" content='Lora' title="Lora">                                             
+        <meta name="select:Google Font" content='Merriweather' title="Merriweather">
+        <meta name="select:Google Font" content='Montserrat' title="Montserrat">       
+        <meta name="select:Google Font" content='Molengo' title="Molengo">
+        <meta name="select:Google Font" content='Neuton' title="Neuton">
+        <meta name="select:Google Font" content='Open Sans' title="Open Sans">
+        <meta name="select:Google Font" content='Open Sans Condensed' title="Open Sans Condensed">
+        <meta name="select:Google Font" content='Oswald' title="Oswald">
+        <meta name="select:Google Font" content='Parisienne' title="Parisienne">
+        <meta name="select:Google Font" content='Permanent Marker' title="Permanent Marker">
+        <meta name="select:Google Font" content='Philosopher' title="Philosopher">
+        <meta name="select:Google Font" content='Playfair Display' title="Playfair Display">
+        <meta name="select:Google Font" content='PT Sans Narrow' title="PT Sans">
+        <meta name="select:Google Font" content='PT Sans Narrow' title="PT Sans Narrow">
+        <meta name="select:Google Font" content='Questrial' title="Questrial">        
+        <meta name="select:Google Font" content='Raleway' title="Raleway">               
+        <meta name="select:Google Font" content='Rokkitt' title="Rokkitt">                      
+        <meta name="select:Google Font" content='Vibur' title="Vibur">
+        
+        <link href='http://fonts.googleapis.com/css?family={select:Google Font}' rel='stylesheet' type='text/css'>
         <style>
             a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
             
@@ -63,6 +101,10 @@
             body {
                 box-sizing: border-box;
                 font-family: Helvetica, sans-serif;
+                {block:IfGoogleFont}
+                font-family: {select:Google Font};
+                {/block:IfGoogleFont}
+                font-weight: 400;
                 font-size: 14px;
                 line-height: 1.4em;
                 background: rgb(204,204,204);

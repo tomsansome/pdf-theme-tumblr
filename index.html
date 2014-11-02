@@ -527,7 +527,7 @@
                 width: auto;
                 height: auto;
                 max-width: 500px;
-                max-height: 400px;
+                max-height: 500px;
             }
             
             .post .inner .photo .enlarge {
@@ -563,7 +563,7 @@
                 width: auto;
                 height: auto;
                 max-width: 500px;
-                max-height: 400px;
+                max-height: 500px;
             }
             
             .post .inner .photoset .loading {
@@ -1135,7 +1135,7 @@
             }
             
             function checkScrollPosition() {
-                if (currentSection === totalPosts) {
+                if (currentSection === totalPosts || bottom) {
                     if (!loadingNext) {
                         if (nextPageUrl) {
                             loadingNext = true;

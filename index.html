@@ -832,6 +832,10 @@
                 color: #999;
             }
             
+            .load-more {
+                display: none;
+            }
+            
             @media (max-width: 850px) {
                 html, body, .post {
                     height: auto;
@@ -953,6 +957,54 @@
                 footer {
                     width: 100%;
                     max-width: 90%;
+                }
+                
+                .load-more {
+                    opacity: 0;
+                    visibility: hidden;
+                    width: 70px;
+                    height: 70px;
+                    margin: 0 auto;
+                    background: rgba(255,255,255,0.4);
+                    border-radius: 50%;
+                    -webkit-animation: scale 2s infinite;
+                    animation: scale 2s infinite;
+                    transition: opacity 250ms ease, visibility 250ms ease, margin 400ms ease;
+                }
+                
+                .load-more p {
+                    display: none;
+                }
+                
+                
+                .load-more.active {
+                    opacity: 1;
+                    visibility: visible;
+                    margin-top: 40px;
+                }
+                
+                .load-more.all-loaded {
+                    width: 200px;
+                    text-align: center;
+                    -webkit-animation: none;
+                    animation: none;
+                    background: none;
+                }
+                
+                .load-more.all-loaded p {
+                    display: inline;
+                    color: #AAAAAA;
+                }
+                
+                @-webkit-keyframes scale {
+                  0% { transform: scale(1) }
+                  50% { transform: scale(0) }
+                  100% { transform: scale(1) }
+                }
+                @keyframes scale {
+                  0% { transform: scale(1) }
+                  50% { transform: scale(0) }
+                  100% { transform: scale(1) }
                 }
             }
         </style>
@@ -1148,6 +1200,8 @@
                             loadingNext = true;
                             previousUrl = nextPageUrl;
                             loadNextPage(nextPageUrl);
+                        } else {
+                            SELECTOR.find('.load-more').addClass('active all-loaded');
                         }
                     }
                 }
@@ -1170,7 +1224,7 @@
             }
             
             function beforeLoading() {
-                // console.log('before loading');
+                SELECTOR.find('.load-more').addClass('active');
             }
             
             function loadComplete(data) {
@@ -1178,6 +1232,7 @@
                     newNextButton = $(data).find('.next');
                 $('.posts').append(content);
                 reCalcPosts();
+                SELECTOR.find('.load-more').removeClass('active');
                 
                 loadingNext = false;
                 
@@ -1513,10 +1568,22 @@
             {/block:Posts}
         </section>
 
+        <div class="load-more"><p>That's everything!</p></div>
+
         <div class="pagination">
             {block:NextPage}
                 <a href="{NextPage}" class="next">Next &#187;</a>
             {/block:NextPage}
         </div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-56380053-1', 'auto');
+          ga('send', 'pageview');
+        
+        </script>
     </body>
 </html>

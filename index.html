@@ -509,6 +509,16 @@
                 color: #333333;
             }
             
+            .post .inner a,
+            .post .inner blockquote,
+            .post .inner p,
+            .post .inner .enlarge,
+            .post .inner img {
+                -webkit-transform: translate(0);
+                -ms-transform: translate(0);
+                transform: translate(0);
+            }
+            
             .post .inner .post-title,
             .post .inner .post-title a {
                 color: #333333;
@@ -1471,7 +1481,9 @@
                             <a href="#" class="enlarge" data-lrg="{PhotoURL-HighRes}">+</a>
                         </div>
                         {block:Caption}
-                            <div class="caption">{Caption}</div>
+                            <div class="caption">
+                            {Caption}
+                            </div>
                         {/block:Caption}
                     </div>
                 {/block:Photo}
